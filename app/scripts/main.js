@@ -118,7 +118,7 @@ $.each(nodes, function(i, node){
 		row.version = sw.firmware.release;
 		enums.versions[row.version] = true;
 	}
-	row.owner = typeof ni.owner != 'undefined' ? ni.owner.contact : undefined;
+	row.owner = ni.owner != null ? ni.owner.contact : undefined;
 	if(typeof node.statistics != 'undefined') {
 		var stats = node.statistics;
 		
@@ -127,7 +127,7 @@ $.each(nodes, function(i, node){
 		enums.gateways[row.gateway] = true;
 		
 		if(row.isOnline) {
-			if (stats.uptime > 0 && typeof stats.traffic != 'undefined') {
+			if (stats.uptime > 0 && stats.traffic != null) {
 				row.traFwd        = stats.traffic.forward.bytes;
 				row.traRx         = stats.traffic.rx.bytes;
 				row.traTx         = stats.traffic.tx.bytes;
