@@ -81,7 +81,7 @@ $.each(rawGraph.links, function(i, link) {
 
 $.each(nodes, function(i, node){
 	var ni = node.nodeinfo;
-	var row = {id: i, recid: node.recid, node: node};
+	var row = {id: ni.node_id, recid: node.recid, node: node};
 	
 	row.isOnline = node.flags.online;
 	row.isGateway = node.flags.gateway;
