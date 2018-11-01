@@ -427,7 +427,7 @@ $('#grid').w2grid({
 		}, 300);
 	},
 	onDblClick: function(event) {
-		window.open(nodelistconfig.mapPath + '/#!v:m;n:'+records[event.recid].id, '_blank');
+		window.open(nodelistconfig.mapPath + '/#/de/map/'+records[event.recid].id, '_blank');
 	},
 });
 
